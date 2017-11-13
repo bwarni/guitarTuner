@@ -1,0 +1,52 @@
+<html>
+
+<head>
+<title>CanvasJS Chart jQuery Plugin</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+
+//Better to construct options first and then pass it as a parameter
+	var dps = [{ y: cake, label: 'Cake total: ' + nameT }];
+
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    backgroundColor: "transparent",
+                    theme: "theme3",
+                    title: {
+                        text: "HashTag Comparison"
+
+                    },
+                    animationEnabled: true,
+                    dataPointWidth: 20,
+                    width: 700,
+                    data: [
+                    {
+                        type: "column",
+                        dataPoints: dps
+                    }],
+
+                    axisX: {
+                        tickColor: "White",
+                        tickLength: 0,
+                        tickThickness: 0,
+                        gridThickness: 0,
+                    },
+                    axisY: {
+                        tickLength: 0,
+                        tickColor: "White",
+                        tickThickness: 1,
+                        gridThickness: 0
+                    },
+                });
+
+	$("#chartContainer").CanvasJSChart(options);
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+
+</html>
